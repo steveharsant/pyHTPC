@@ -1,0 +1,8 @@
+{
+    "name": "Google",
+    "type":  "web",
+    "catagory":  "site",
+    "url": "https://www.google.com",
+    "info": "Search for things",
+    "logo": "/path/to/logo"
+}

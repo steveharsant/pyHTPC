@@ -1,0 +1,8 @@
+# Ignored directories
+./__pycache__/*
+./env
+
+# Ignored files
+./.flaskenv
+
+# Ignored filetypes

@@ -1,0 +1,8 @@
+{
+    "name": "Facebook",
+    "type":  "web",
+    "catagory":  "social",
+    "url": "https://www.facebook.com",
+    "info": "We aren't spying on you, promise",
+    "logo": "/path/to/logo"
+}

@@ -1,0 +1,21 @@
+/* Elements */
+body {
+    background-color: powderblue;
+  }
+
+
+
+  /* Classes */
+.catagory-name {
+  display: inline-block;
+  width: 100%;
+}
+
+  .tile {
+    width: 20%;
+    float: left;
+  }
+
+  .tile-catagory {
+    width: 100%;
+  }

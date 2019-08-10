@@ -1,0 +1,8 @@
+{
+    "name": "Netflix",
+    "type":  "web",
+    "catagory":  "video",
+    "url": "https://www.netflix.com",
+    "info": "See what’s next",
+    "logo": "/path/to/logo"
+}
