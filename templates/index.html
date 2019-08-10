@@ -1,43 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>pyHTPC</title>
-        <script type="text/javascript" src="{{ url_for('static', filename='time.js') }}"></script>
-        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css">
+        {% include 'head.html' %}
     </head>
     <body onload="startClock()">
-        <div class="block" id="navbar">{% block navbar %}{% endblock %}</div>
-
+        <div id="navbar">
+            {% include 'navbar.html' %}
         </div>
-        <div class="widget" id="clock"></div>
 
-        <div class="block" id="tiles_block"> 
+        <div class="widgets">
+            {% include 'widgets.html' %}
+        </div>
+
+        <div class="tiles"> 
             <!-- Video tiles -->
-            <div class="tile-catagory"></div>
-            <h2 class="catagory-name">Video</h2>
-            {% for tile in tiles_config %}
-                {% if tile.catagory == "video" %}
-                    <div class="tile">
-                        <h3>{{ tile.name }}</h3>
-                        <a href="{{ tile.url }}"><img src="{{ tile.logo }}"/></a>
-                        <p>{{ tile.info }}</p>
-                    </div>
-                {% endif %}
-            {% endfor %}
+            <div id="video_tiles">
+                {% include 'video-tiles.html' %}
             </div>
+
             <!-- Application tiles -->
-        <div class="tile-catagory">
-        <h2 class="catagory-name">Applications</h2>
-            {% for tile in tiles_config %}
-                {% if tile.catagory == "app" %}
-                    <div class="tile">
-                        <h3>{{ tile.name }}</h3>
-                        <a href="{{ tile.url }}"><img src="{{ tile.logo }}"/></a>
-                        <p>{{ tile.info }}</p>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+            <div class="application_tiles">
+                {% include 'application-tiles.html' %}
+            </div>
         </div>
     </body>
 </html>

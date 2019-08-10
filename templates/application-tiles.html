@@ -1,0 +1,10 @@
+<h2 class="catagory-name">Applications</h2>
+{% for tile in tiles_config %}
+    {% if tile.catagory == "app" %}
+        <div class="tile">
+            <h3>{{ tile.name }}</h3>
+            <a href="{{ tile.url }}"><img src="{{ tile.logo }}"/></a>
+            <p>{{ tile.info }}</p>
+        </div>
+    {% endif %}
+{% endfor %}
