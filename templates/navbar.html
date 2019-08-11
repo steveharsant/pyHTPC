@@ -1,1 +1,5 @@
-<h1>navbar here!</h1>
+<ul>
+    {% for nav in navbar_config %}
+        <li><a href="{{ nav.url }}">{{ nav.name }}</a></li>
+    {% endfor %}
+</ul>
