@@ -4,5 +4,5 @@
     "catagory":  "video",
     "url": "https://www.youtube.com",
     "info": "Videos and stuff",
-    "logo": "/path/to/logo"
+    "logo": "./static/images/tiles/youtube.png"
 }

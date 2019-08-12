@@ -1,0 +1,8 @@
+{
+    "name": "BBC iPlayer",
+    "type":  "web",
+    "catagory":  "video",
+    "url": "https://bbc.co.uk/iplayer",
+    "info": "BBC on demand",
+    "logo": "./static/images/tiles/bbc_iplayer.png"
+}

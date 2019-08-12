@@ -1,10 +1,14 @@
-<h2 class="catagory-name">Video</h2>
-{% for tile in tiles_config %}
-    {% if tile.catagory == "video" %}
-        <div class="tile">
-            <h3>{{ tile.name }}</h3>
-            <a href="{{ tile.url }}"><img src="{{ tile.logo }}"/></a>
-            <p>{{ tile.info }}</p>
-        </div>
-    {% endif %}
-{% endfor %}
+<h2 class="catagory-name text-center">Video</h2>
+<div class="container mw-100">
+    <div class="row mw-100 justify-content-left">
+        {% for tile in tiles_config %}
+            {% if tile.catagory == "video" %}
+                <div class="tile col-xs-4 p-2">
+                    <h3>{{ tile.name }}</h3>
+                    <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>
+                    <p>{{ tile.info }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

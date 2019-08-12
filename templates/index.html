@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         {% include 'head.html' %}
     </head>
     <body onload="startClock()">
+        <!-- Navigation bar -->
         <div id="navbar">
             {% include 'navbar.html' %}
         </div>
 
+        <!-- Widgets -->
         <div class="widgets">
             {% include 'widgets.html' %}
         </div>
@@ -23,6 +25,8 @@
                 {% include 'application-tiles.html' %}
             </div>
         </div>
+        <!-- Scripts -->
+        {% include 'scripts.html' %}
     </body>
 </html>
 

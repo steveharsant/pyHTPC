@@ -1,0 +1,8 @@
+{
+    "name": "itv2",
+    "type":  "web",
+    "catagory":  "video",
+    "url": "https://itv.com/hub/itv2",
+    "info": "itv2 on demand",
+    "logo": "./static/images/tiles/itv2.png"
+}

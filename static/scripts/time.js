@@ -5,9 +5,16 @@ function startClock() {
   //  var s = today.getSeconds();
     m = checkTime(m);
     //s = checkTime(s);
+     
+    if (h > 12) {
+      h = h -12
+      ampm = "pm"
+    } else { 
+      ampm = "am"
+    }
+    
     document.getElementById('clock').innerHTML =
-    // h + ":" + m + ":" + s;
-    h + ":" + m;
+    h + ":" + m + ampm;
     var t = setTimeout(startClock, 500);
   }
   function checkTime(i) {

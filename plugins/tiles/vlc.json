@@ -4,5 +4,5 @@
     "catagory":  "app",
     "url": "/usr/bin/vlc",
     "info": "Best media player, ever",
-    "logo": "/path/to/logo"
+    "logo": "./static/images/tiles/vlc.png"
 }

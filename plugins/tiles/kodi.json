@@ -1,0 +1,8 @@
+{
+    "name": "Kodi",
+    "type":  "app",
+    "catagory":  "app",
+    "url": "/usr/bin/vlc",
+    "info": "Kodi does it all",
+    "logo": "./static/images/tiles/kodi.png"
+}
