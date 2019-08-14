@@ -2,7 +2,7 @@
     "name": "YouTube",
     "type":  "web",
     "catagory":  "video",
-    "url": "https://www.youtube.com",
+    "url": "https://www.youtube.com/tv",
     "info": "Videos and stuff",
     "logo": "./static/images/tiles/youtube.png"
 }

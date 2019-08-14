@@ -1,12 +1,12 @@
-<h2 class="catagory-name text-center">Applications</h2>
+<h1 class="text-light catagory-name text-center">Applications</h1>
 <div class="container mw-100">
     <div class="row mw-100 justify-content-left">
         {% for tile in tiles_config %}
             {% if tile.catagory == "app" %}
                 <div class="tile col-xs-4 p-2">
-                    <h3>{{ tile.name }}</h3>
+                    <h2 class="text-light">{{ tile.name }}</h2>
                     <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>
-                    <p>{{ tile.info }}</p>
+                    <p class="text-light">{{ tile.info }}</p>
                 </div>
             {% endif %}
         {% endfor %}
