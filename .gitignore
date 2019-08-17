@@ -6,5 +6,5 @@
 # Ignored files
 /.flaskenv
 /pyHTPC-tests.py
-
+app.pyc
 # Ignored filetypes
