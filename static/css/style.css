@@ -28,3 +28,8 @@ p, #clock{
 }
 
 /* Classes */
+
+/* Spatial Navigation */
+:focus {
+  outline: 2px solid red;
+}
