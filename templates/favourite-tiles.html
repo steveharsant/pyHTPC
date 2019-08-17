@@ -1,8 +1,8 @@
-<h1 class="text-light catagory-name text-center">Video</h1>
+<h1 class="text-light catagory-name text-center">Favourites</h1>
 <div class="container mw-100">
     <div class="row mw-100 justify-content-left">
         {% for tile in tiles_config %}
-            {% if tile.catagory == "video" and tile.favourite == "false" %}
+            {% if tile.favourite == "true" %}
                 <div class="tile col-xs-4 p-2 img-hover-zoom">
                     <h2 class="text-light">{{ tile.name }}</h2>
                     <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>

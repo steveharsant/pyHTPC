@@ -4,5 +4,6 @@
     "catagory":  "site",
     "url": "https://www.google.com",
     "info": "Search for things",
-    "logo": "/path/to/logo"
+    "logo": "./static/images/tiles/chrome.png",
+    "favourite": "true"
 }

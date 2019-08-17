@@ -4,5 +4,6 @@
     "catagory":  "video",
     "url": "https://amazon.co.uk/Amazon-Video/b?&node=3010085031",
     "info": "Work Hard. Have Fun. Make History.",
-    "logo": "./static/images/tiles/prime.png"
+    "logo": "./static/images/tiles/prime.png",
+    "favourite": "false"
 }

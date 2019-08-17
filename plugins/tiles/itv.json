@@ -4,5 +4,6 @@
     "catagory":  "video",
     "url": "https://itv.com/hub/itv",
     "info": "itv on demand",
-    "logo": "./static/images/tiles/itv.png"
+    "logo": "./static/images/tiles/itv.png",
+    "favourite": "false"
 }

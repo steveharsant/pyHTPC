@@ -4,5 +4,6 @@
     "catagory":  "video",
     "url": "https://www.youtube.com/tv",
     "info": "Videos and stuff",
-    "logo": "./static/images/tiles/youtube.png"
+    "logo": "./static/images/tiles/youtube.png",
+    "favourite": "true"
 }

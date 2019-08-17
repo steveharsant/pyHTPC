@@ -1,4 +1,8 @@
 /* Elements */
+* {
+  cursor: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,7 +17,7 @@ h1{
 }
 
 body {
-  background: url('../../static/images/backgrounds/ambient-blue.jpg') no-repeat center center fixed;
+  background: url('../../static/images/backgrounds/dark-gradient.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -37,12 +41,16 @@ p, #clock{
   width: 3rem;
 }
 
+.tiles img{
+  border:1px solid rgb(0, 81, 134);
+}
+
 .navbar-text{
   display: none;
 }
 
 /* Spatial Navigation */
 :focus {
-  outline: 5px solid rgba(136,206,252,1);
+  outline: 4px solid rgb(0, 81, 134);
 
 }
