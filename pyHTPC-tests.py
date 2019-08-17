@@ -1,33 +1,25 @@
-from flask import Flask
-import os
+import os,glob
+import json
 
-vlc = '/usr/bin/vlc'
 
-main_page = """
-<!DOCTYPE html>
-<html>
-<body>
-
-<h2>Button</h2>
-<form action="button">
-    <button type="submit">Press Button!</button>
-<form>
- 
-</body>
-</html>
-"""
-
-app = Flask(__name__)
-
-@app.route('/button')
-def button():
-    os.system(vlc)
-    return main_page
+def build_json(input_directory):
+    json_config = '['
+    counter = 0
     
+    for item in glob.glob(os.path.join(input_directory, '*.json')):
+        with open(item, 'r') as file:
+            contents = file.read()
+            json_config += contents + ','
+            counter += 1
 
-@app.route('/')
-def index():
-    return main_page
+    json_config = json_config[:-1]
+    json_config = json_config + ']'
+    json_config = json.loads(json_config)
+    return json_config
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+tiles_config = build_json('./plugins/tiles')
+print(tiles_config)
+
+navbar_config = build_json('./plugins/navbar')
+print(navbar_config)
+

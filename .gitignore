@@ -1,8 +1,10 @@
 # Ignored directories
-./__pycache__/*
-./env
+/__pycache__/*
+/.vscode
+/env
 
 # Ignored files
-./.flaskenv
+/.flaskenv
+/pyHTPC-tests.py
 
 # Ignored filetypes
