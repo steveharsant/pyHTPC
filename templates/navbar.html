@@ -1,5 +1,10 @@
-<ul class="list-inline">
+<ul class="list-inline p-2">
     {% for nav in navbar_config %}
-        <li class="list-inline-item"><a href="{{ nav.url }}">{{ nav.name }}</a></li>
+        <li class="list-inline-item">
+            <a href="{{ nav.url }}">
+                <p class="navbar-text">{{ nav.name }}</p>
+                <img class="navbar-icons" src="{{ nav.logo }}"/>
+            </a>
+        </li>
     {% endfor %}
 </ul>

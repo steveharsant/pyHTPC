@@ -3,9 +3,9 @@
     <div class="row mw-100 justify-content-left">
         {% for tile in tiles_config %}
             {% if tile.catagory == "video" %}
-                <div class="tile col-xs-4 p-2 ">
+                <div class="tile col-xs-4 p-2 img-hover-zoom">
                     <h2 class="text-light">{{ tile.name }}</h2>
-                    <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}" class="focusable"/></a>
+                    <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>
                     <p class="text-light">{{ tile.info }}</p>
                 </div>
             {% endif %}

@@ -1,5 +1,5 @@
 {
     "name": "Settings",
     "url": "./settings",
-    "logo": "/path/to/logo"
+    "logo": "./static/images/icons/settings.png"
 }
