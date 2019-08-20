@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import json
 import os,glob
 import time
@@ -28,6 +28,18 @@ tiles_config = build_json('./plugins/tiles')
 navbar_config = build_json('./plugins/navbar')
 
 
-@app.route("/")
+@app.route('/')
 def home():
     return render_template('index.html', tiles_config=tiles_config, navbar_config=navbar_config)
+
+
+@app.route('/settings', methods = ['GET', 'POST'])
+def settings():
+    if request.method == 'GET':
+        return render_template('settings.html', tiles_config=tiles_config, navbar_config=navbar_config)
+    else:
+        # tile_name = request.form['tile_name']
+        # tile_info = request.form['tile_info']
+        # tile_url = request.form['tile_url']
+        print('hello')
+        home()

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <div id="navbar">
+                {% include 'navbar.html' %}
+        </div>
+        <div class="settings" id="tiles_settings">
+            <h1 class="text-light catagory-name text-center">Tile Editor</h1>
+            <p class="text-light">Add, remove and edit tiles...</p>
+            <h2 class="text-light text-left">Add a Tile</h2>
+
+            <form action="" method="POST" name="add_tile">
+                <input type="text" name="tile_name" class="form-control form-group-lg" placeholder="Tile Name..."/>
+                <input type="text" name="tile_info" class="form-control form-group-lg" placeholder="Tile info..."/>
+                <input type="text" name="tile_url" class="form-control form-group-lg" placeholder="https://netflix.com"/>
+
+                <select name="tile_type" class="form-control form-group-lg">
+                    <option>App</option>
+                    <option>Web</option>
+                </select>
+
+                <select name="tile_catagory" class="form-control form-group-lg">
+                    <option>App</option>
+                    <option>Music</option>
+                    <option>Site</option>
+                    <option>Social</option>
+                    <option>Video</option>
+                    </select>
+                
+                <input name="tile_favourite" type="checkbox" class="form-check-input form-group-lg" value="" id="tile_favourite">
+                <label class="form-check-label form-group-lg" for="tile_favourite">This tile is a favourite!</label>
+
+                <button type="submit" class="form-group-lg" formmethod="post">Save</button>
+            </form>
+        </div>
+        <!-- Scripts -->
+        {% include 'scripts.html' %}
+        {% include 'spatial.html' %}
+    </body>
+</html>
