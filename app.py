@@ -15,6 +15,7 @@ def build_json(input_directory):
         for item in glob.glob(os.path.join(input_directory, '*.json')):
             with open(item, 'r') as file:
                 contents = file.read()
+                file.close()
                 json_config += contents + ','
                 counter += 1
     
