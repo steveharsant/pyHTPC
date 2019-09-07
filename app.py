@@ -34,13 +34,25 @@ def home():
     return render_template('index.html', tiles_config=tiles_config, navbar_config=navbar_config)
 
 
-@app.route('/settings', methods = ['GET', 'POST'])
+@app.route('/settings')
 def settings():
-    if request.method == 'GET':
-        return render_template('settings.html', tiles_config=tiles_config, navbar_config=navbar_config)
-    else:
-        # tile_name = request.form['tile_name']
-        # tile_info = request.form['tile_info']
-        # tile_url = request.form['tile_url']
-        print('hello')
-        home()
+    return render_template('settings.html', tiles_config=tiles_config, navbar_config=navbar_config)
+    
+@app.route('/settings', methods=['POST'])
+def settings_post():
+    tile_name = request.form['tile_name']; tile_filename = tile_name + '.json'; tile_name = "\"name\": \"" + tile_name + "\",\n"
+    tile_info = request.form['tile_info']; tile_info = "\"info\": \"" + tile_info + "\",\n" 
+    tile_url = request.form['tile_url']; tile_url = "\"url\": \"" + tile_url + "\",\n" 
+    tile_type = request.form['tile_type']; tile_type = "\"type\": \"" + tile_type + "\",\n" 
+    tile_catagory = request.form['tile_catagory']; tile_catagory = "\"catagory\": \"" + tile_catagory + "\",\n" 
+    tile_favourite = request.form['tile_favourite']; tile_favourite = "\"favourite\": \"" + tile_favourite + "\"\n" 
+    
+    file = open('./plugins/tiles/' + tile_filename, 'w')
+    file.writelines(['{\n', tile_name, tile_type, tile_catagory, tile_url, tile_info, tile_favourite, '}\n' ])
+    file.close
+
+    return settings()
+    
+
+
+
