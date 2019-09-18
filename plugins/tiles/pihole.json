@@ -1,0 +1,9 @@
+{
+    "name": "Pihole",
+    "type":  "web",
+    "catagory":  "utilities",
+    "url": "http://192.168.5.110/admin/",
+    "info": "A black hole for Internet advertisements",
+    "logo": "./static/images/tiles/pihole.png",
+    "favourite": "false"
+}

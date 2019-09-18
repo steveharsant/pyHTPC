@@ -1,0 +1,9 @@
+{
+    "name": "Transmission",
+    "type":  "web",
+    "catagory":  "utilities",
+    "url": "http://192.168.5.102:9091/transmission/web/",
+    "info": "Torrent client",
+    "logo": "./static/images/tiles/transmission.png",
+    "favourite": "false"
+}

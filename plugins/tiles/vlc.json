@@ -1,5 +1,5 @@
 {
-    "name": "vlc",
+    "name": "VLC",
     "type":  "app",
     "catagory":  "app",
     "url": "/usr/bin/vlc",

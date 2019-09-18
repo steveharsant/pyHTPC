@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, redirect, render_template, request
 import json
 import os,glob
 import time
@@ -28,11 +28,15 @@ def build_json(input_directory):
 tiles_config = build_json('./plugins/tiles')
 navbar_config = build_json('./plugins/navbar')
 
-
 @app.route('/')
 def home():
     return render_template('index.html', tiles_config=tiles_config, navbar_config=navbar_config)
 
+# # Execute application
+# @app.route('/usr/bin/<app>')
+# def application(app):
+#     os.system('/usr/bin/' + app)
+#     return redirect('/')
 
 @app.route('/settings')
 def settings():
@@ -52,7 +56,9 @@ def settings_post():
     file.close
 
     return settings()
-    
 
-
-
+# Execute application
+@app.route('/usr/bin/<app>')
+def application(app):
+    os.system('/usr/bin/' + app)
+    return redirect('/')

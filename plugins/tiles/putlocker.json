@@ -1,0 +1,9 @@
+{
+    "name": "Putlocker",
+    "type":  "web",
+    "catagory":  "video",
+    "url": "https://putlocker.vip",
+    "info": "Aaaarrrrgggghhhh, matey!",
+    "logo": "./static/images/tiles/putlocker.png",
+    "favourite": "false"
+}
