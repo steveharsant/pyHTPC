@@ -7,6 +7,14 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: url('../../static/images/backgrounds/dark-gradient.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 h1, h2, h3, h4, h5, h6, h7, h8, h9{
   font-family: 'Raleway', sans-serif !important;
   font-weight: 200;
@@ -16,17 +24,14 @@ h1{
   font-size: 3.5rem;
 }
 
-body {
-  background: url('../../static/images/backgrounds/dark-gradient.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+h2{
+  font-size: 3rem;
 }
 
 p, #clock{
   font-family: 'Raleway', sans-serif !important;
   font-weight: 200 !important;
+  font-size: 1rem;
 }
 
 /* IDs */
@@ -35,7 +40,25 @@ p, #clock{
   margin-top: -4rem; 
 }
 
+#settings-input-button{
+  color: #FFFFFF;
+}
+
 /* Classes */
+.settings{
+  margin: auto;
+  width: 80%;
+}
+
+.settings-input {
+  background-color:transparent !important;
+  border:none;
+  border-bottom: 3px solid rgba(204, 198, 198, 0.425);
+  height: 5rem;
+  width: 100%;
+  font-size: 2rem;
+}
+
 .navbar-icons{
   height: 3rem;
   width: 3rem;

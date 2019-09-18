@@ -14,16 +14,17 @@
             <h2 class="text-light text-left">Add a Tile</h2>
 
             <form action="" method="POST" name="add_tile">
-                <input type="text" name="tile_name" class="form-control form-group-lg" placeholder="Tile Name..."/>
-                <input type="text" name="tile_info" class="form-control form-group-lg" placeholder="Tile info..."/>
-                <input type="text" name="tile_url" class="form-control form-group-lg" placeholder="https://netflix.com"/>
+                <input type="text" name="tile_name" class="settings-input form-control form-group-lg" placeholder="Tile Name..." autocomplete="false"/>
+                <input type="text" name="tile_info" class="settings-input form-control form-group-lg" placeholder="Tile info..." autocomplete="false"/>
+                <input type="text" name="tile_url" class="settings-input form-control form-group-lg" placeholder="Url (e.g. https://netflix.com)" autocomplete="false"/>
 
-                <select name="tile_type" class="form-control form-group-lg">
+                <select name="tile_type" class="settings-input form-control form-group-lg">
                     <option>App</option>
                     <option>Web</option>
                 </select>
 
-                <select name="tile_catagory" class="form-control form-group-lg">
+                <select name="tile_catagory" class="settings-input form-control form-group-lg">
+                    <option value="" disabled selected>Tile Catagory</option>
                     <option>App</option>
                     <option>Music</option>
                     <option>Site</option>
@@ -31,12 +32,13 @@
                     <option>Video</option>
                 </select>
                 
-                <select name="tile_favourite" class="form-control form-group-lg">
-                    <option>False</option>
+                <select name="tile_favourite" class="settings-input form-control form-group-lg">
+                    <option value="" disabled selected>Favourite Tile</option>
                     <option>True</option>
+                    <option>False</option>
                 </select>
                 
-                <input type="submit" class="form-group-lg" formmethod="post">Save</input>
+                <input type="submit" class="settings-input form-group-lg" id="settings-input-button" formmethod="post">Save</input>
             </form>
         </div>
         <!-- Scripts -->
