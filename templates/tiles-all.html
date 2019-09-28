@@ -1,0 +1,52 @@
+<div class="container mw-100">
+    <div class="row mw-100 justify-content-left">
+
+        <!-- Favourite Tiles -->
+        {% for tile in tiles_config %}
+            {% if tile.favourite == "true" %}
+                <div class="tile col-xs-4 p-2 img-hover-zoom">
+                    <h2 class="text-light">{{ tile.name }}</h2>
+                    <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>
+                    <p class="tile-info text-light">{{ tile.info }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Video Tiles -->
+        {% for tile in tiles_config %}
+            {% if tile.catagory == "video" and tile.favourite == "false" %}
+            <div class="tile col-xs-4 p-2 img-hover-zoom">
+                <h2 class="text-light">{{ tile.name }}</h2>
+                <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>
+                <p class="tile-info text-light">{{ tile.info }}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+        <!-- App Tiles -->
+        {% for tile in tiles_config %}
+            {% if tile.catagory == "app" and tile.favourite == "false" %}
+            <div class="tile col-xs-4 p-2">
+                <h2 class="text-light">{{ tile.name }}</h2>
+                <a href="{{ tile.url }}"><img src="{{ tile.logo }}"/></a>
+                <p class="tile-info text-light">{{ tile.info }}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Utilities Tiles -->
+        {% for tile in tiles_config %}
+            {% if tile.catagory == "utilities" and tile.favourite == "false" %}
+                <div class="tile col-xs-4 p-2 img-hover-zoom">
+                    <h2 class="text-light">{{ tile.name }}</h2>
+                    {% if tile.type == "web" %}
+                        <a href="{{ tile.url }}" target="_blank"><img src="{{ tile.logo }}"/></a>
+                    {% else %}
+                    <a href="{{ tile.url }}"><img src="{{ tile.logo }}"/></a>
+                    {% endif %}
+                    <p class="tile-info text-light">{{ tile.info }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

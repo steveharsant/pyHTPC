@@ -9,36 +9,31 @@
                 {% include 'navbar.html' %}
         </div>
         <div class="settings" id="tiles_settings">
-            <h1 class="text-light catagory-name text-center">Tile Editor</h1>
-            <p class="text-light">Add, remove and edit tiles...</p>
-            <h2 class="text-light text-left">Add a Tile</h2>
+            <h1 class="text-light category-name text-center">Settings</h1>
+            <p class="text-light"></p>
+            <h2 class="text-light text-left">Configure global options...</h2>
 
             <form action="" method="POST" name="add_tile">
-                <input type="text" name="tile_name" class="settings-input form-control form-group-lg" placeholder="Tile Name..." autocomplete="false"/>
-                <input type="text" name="tile_info" class="settings-input form-control form-group-lg" placeholder="Tile info..." autocomplete="false"/>
-                <input type="text" name="tile_url" class="settings-input form-control form-group-lg" placeholder="Url (e.g. https://netflix.com)" autocomplete="false"/>
-
-                <select name="tile_type" class="settings-input form-control form-group-lg">
-                    <option>App</option>
-                    <option>Web</option>
-                </select>
-
-                <select name="tile_catagory" class="settings-input form-control form-group-lg">
-                    <option value="" disabled selected>Tile Catagory</option>
-                    <option>App</option>
-                    <option>Music</option>
-                    <option>Site</option>
-                    <option>Social</option>
-                    <option>Video</option>
-                    <option>Utilites</option>
-                </select>
-                
-                <select name="tile_favourite" class="settings-input form-control form-group-lg">
-                    <option value="" disabled selected>Favourite Tile</option>
+                <select name="show_category_headers" class="settings-input form-control form-group-lg">
+                    <option value="" disabled selected>Show Category Headers</option>
                     <option>True</option>
                     <option>False</option>
                 </select>
-                
+                <select name="show_tile_headers" class="settings-input form-control form-group-lg">
+                    <option value="" disabled selected>Show Tile Headers</option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
+                <select name="show_tile_info" class="settings-input form-control form-group-lg">
+                    <option value="" disabled selected>Show Tile Info</option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
+                <select name="categorise_tiles" class="settings-input form-control form-group-lg">
+                        <option value="" disabled selected>Categorise Tiles by Type</option>
+                    <option>True</option>
+                    <option>False</option>
+                </select>
                 <input type="submit" class="settings-input form-group-lg" id="settings-input-button" formmethod="post">Save</input>
             </form>
         </div>

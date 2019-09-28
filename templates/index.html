@@ -15,26 +15,36 @@
         </div>
 
         <div class="tiles">
-            <!-- Favourite tiles -->
-            <div class="favourite_tiles">
+        {% for setting in system_config %}
+            {% if setting.categoriseTiles == "true" %}
+                <!-- Favourite tiles -->
+                <div class="favourite_tiles">
                     {% include 'favourite-tiles.html' %}
                 </div>
- 
-            <!-- Video tiles -->
-            <div id="video_tiles">
-                {% include 'video-tiles.html' %}
-            </div>
+    
+                <!-- Video tiles -->
+                <div id="video_tiles">
+                    {% include 'video-tiles.html' %}
+                </div>
 
-            <!-- Application tiles -->
-            <div class="application_tiles">
-                {% include 'application-tiles.html' %}
-            </div>
+                <!-- Application tiles -->
+                <div class="application_tiles">
+                    {% include 'application-tiles.html' %}
+                </div>
 
-            <!-- Utilities tiles -->
-            <div class="utilities_tiles">
-                {% include 'utilities-tiles.html' %}
-            </div>
+                <!-- Utilities tiles -->
+                <div class="utilities_tiles">
+                    {% include 'utilities-tiles.html' %}
+                </div>
+            {% elif setting.categoriseTiles == "false" %}
+                <!-- All tiles -->
+                <div class="all_tiles">
+                    {% include 'tiles-all.html' %}
+                </div>
+            {% endif %}
+        {% endfor %}
         </div>
+
         <!-- Scripts -->
         {% include 'scripts.html' %}
         {% include 'spatial.html' %}

@@ -6,9 +6,11 @@ function startClock() {
     m = checkTime(m);
     //s = checkTime(s);
      
-    if (h > 12) {
-      h = h -12
+    if (h >= 12) {
       ampm = "pm"
+      if (h > 12) {
+        h = h -12
+      }
     } else { 
       ampm = "am"
     }

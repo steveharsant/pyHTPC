@@ -59,6 +59,17 @@ p, #clock{
   font-size: 2rem;
 }
 
+.tile {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 15.1rem;
+}
+
+.tile-info{
+  display: none;
+}
+
 .navbar-icons{
   height: 3rem;
   width: 3rem;
