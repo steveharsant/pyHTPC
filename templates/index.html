@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% include 'head.html' %}
-    </head>
-    <body onload="startClock()">
-        <!-- Navigation bar -->
-        <div id="navbar">
-            {% include 'navbar.html' %}
-        </div>
 
-        <!-- Widgets -->
-        <div class="widgets">
-            {% include 'widgets.html' %}
-        </div>
+<head>
+  {% include 'head.html' %}
 
-        <div class="tiles">
-        {% for setting in system_config %}
-            {% if setting.categoriseTiles == "true" %}
-                <!-- Favourite tiles -->
-                <div class="favourite_tiles">
-                    {% include 'favourite-tiles.html' %}
-                </div>
-    
-                <!-- Video tiles -->
-                <div id="video_tiles">
-                    {% include 'video-tiles.html' %}
-                </div>
+  <!-- Icon theme -->
+  {% include 'icons.html' %}
+</head>
 
-                <!-- Application tiles -->
-                <div class="application_tiles">
-                    {% include 'application-tiles.html' %}
-                </div>
+<body onload="startClock()">
 
-                <!-- Utilities tiles -->
-                <div class="utilities_tiles">
-                    {% include 'utilities-tiles.html' %}
-                </div>
-            {% elif setting.categoriseTiles == "false" %}
-                <!-- All tiles -->
-                <div class="all_tiles">
-                    {% include 'tiles-all.html' %}
-                </div>
-            {% endif %}
-        {% endfor %}
-        </div>
+  <!-- Background -->
+  <img src="{{theme.background_image }}" id="bg" alt="">
 
-        <!-- Scripts -->
-        {% include 'scripts.html' %}
-        {% include 'spatial.html' %}
-    </body>
+  <!-- Clock -->
+  <div id="clock">
+    {% include 'clock.html' %}
+  </div>
+
+  <!-- Tiles -->
+  <div id="tiles">
+    {% include 'tiles.html' %}
+  </div>
+
+  <!-- utilities bar -->
+  <div id="utilities">
+    {% include 'utilities.html' %}
+  </div>
+
+  <!-- Scripts -->
+  {% include 'scripts.html' %}
+  {% include 'spatial.html' %}
+</body>
+
 </html>

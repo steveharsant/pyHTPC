@@ -1,6 +1,12 @@
 {
-    "showCatagoryHeaders": "true",
-    "showTileHeaders": "true",
-    "showTileInfo":  "true",
-    "categoriseTiles": "false"
+  "tiles" : {
+    "show_names" : "false",
+    "show_catagory_icon" : "false"
+  },
+  "utilities" : {
+    "show_names" : "true"
+  },
+  "theme" : {
+    "active_theme" : "default"
+  }
 }

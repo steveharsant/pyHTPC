@@ -1,9 +1,0 @@
-{
-    "name": "Kodi",
-    "type":  "app",
-    "catagory":  "app",
-    "url": "/usr/bin/kodi",
-    "info": "Kodi does it all",
-    "logo": "./static/images/tiles/kodi.png",
-    "favourite": "true"
-}

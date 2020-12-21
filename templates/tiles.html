@@ -1,0 +1,34 @@
+<div class="tiles" id="favourite_tiles">
+
+  {% if config.tiles.show_catagory_icon == "true" %}
+  <div class="icon tile_catagory_icon" id="favourite_tiles_icon"></div>
+  {% endif %}
+
+  {% for tile in tiles %}
+  {% if tile.favourite == "true" %}
+  <div class="tile col-xs-4 p-2 img-hover-zoom">
+    {% if config.tiles.show_names == "true" %}
+    <h2 class="tile-name text-light">{{ tile.name }}</h2>
+    {% endif %}
+    <a href="{{ tile.location }}" target="_blank"><img src="{{ tile.image }}" /></a>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+<div class="tiles" id="all_tiles">
+  {% if config.tiles.show_catagory_icon == "true" %}
+  <div class="icon tile_catagory_icon" id="all_tiles_icon"></div>
+  {% endif %}
+
+  {% for tile in tiles %}
+  {% if tile.favourite == "false" %}
+  <div class="tile col-xs-4 p-2 img-hover-zoom">
+    {% if config.tiles.show_names == "true" %}
+    <h2 class="tile-name text-light">{{ tile.name }}</h2>
+    {% endif %}
+    <a href="{{ tile.location }}" target="_blank"><img src="{{ tile.image }}" /></a>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>

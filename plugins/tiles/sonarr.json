@@ -1,9 +1,0 @@
-{
-    "name": "Sonarr",
-    "type":  "web",
-    "catagory":  "utilities",
-    "url": "http://192.168.5.102:8989",
-    "info": "TV show manager",
-    "logo": "./static/images/tiles/sonarr.png",
-    "favourite": "false"
-}

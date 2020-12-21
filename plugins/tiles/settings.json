@@ -1,9 +1,0 @@
-{
-    "name": "Settings",
-    "type":  "app",
-    "catagory":  "utilities",
-    "url": "/usr/bin/gnome-control-center",
-    "info": "System Settings",
-    "logo": "./static/images/tiles/settings.png",
-    "favourite": "false"
-}

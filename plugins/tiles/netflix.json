@@ -1,9 +1,0 @@
-{
-    "name": "Netflix",
-    "type":  "web",
-    "catagory":  "video",
-    "url": "https://www.netflix.com",
-    "info": "See what’s next",
-    "logo": "./static/images/tiles/netflix.png",
-    "favourite": "true"
-}

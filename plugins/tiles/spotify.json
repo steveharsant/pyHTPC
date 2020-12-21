@@ -1,9 +1,0 @@
-{
-    "name": "Spotify",
-    "type":  "music",
-    "catagory":  "site",
-    "url": "https://open.spotify.com",
-    "info": "Music streaming for every mood",
-    "logo": "./static/images/tiles/spotify.png",
-    "favourite": "true"
-}

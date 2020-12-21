@@ -1,0 +1,16 @@
+<ul class="list-inline p-2">
+
+  {% for utility in utilities %}
+  <li class="list-inline-item">
+    <a href="{{ utility.location }}">
+
+      {% if utilities.show_names == "true" %}
+      <p class="utility_text">{{ utility.name }}</p>
+      {% endif %}
+
+      <img class="utility_icons" src="{{ utility.image }}" />
+    </a>
+  </li>
+  {% endfor %}
+
+</ul>

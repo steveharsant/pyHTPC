@@ -1,9 +1,0 @@
-{
-    "name": "Couch Potato",
-    "type":  "web",
-    "catagory":  "utilities",
-    "url": "http://192.168.5.102:5050/",
-    "info": "Movie manager",
-    "logo": "./static/images/tiles/couchpotato.png",
-    "favourite": "false"
-}

@@ -1,0 +1,63 @@
+{
+  "tiles": [{
+      "name": "BBC iPlayer",
+      "location": "https://bbc.co.uk/iplayer",
+      "image": "./static/images/tiles/bbc_iplayer.png",
+      "favourite": "false"
+    },
+    {
+      "name": "Web Browser",
+      "location": "tbc",
+      "image": "./static/images/tiles/browser.png",
+      "favourite": "false"
+    },
+    {
+      "name": "Curiosity Stream",
+      "location": "https://curiositystream.com",
+      "image": "./static/images/tiles/curiosity_stream.png",
+      "favourite": "false"
+    },
+    {
+      "name": "Emby",
+      "location": "https://watch.sharsant.com",
+      "image": "./static/images/tiles/emby.png",
+      "favourite": "true"
+    },
+    {
+      "name": "Netflix",
+      "location": "https://netflix.com/SwitchProfile?tkn=ZZJLOC5AFNFJBKE2D7FZZA6QQE",
+      "image": "./static/images/tiles/netflix.png",
+      "favourite": "true"
+    },
+    {
+      "name": "Prime Video",
+      "location": "https://amazon.co.uk/Amazon-Video/b?&node=3010085031",
+      "image": "./static/images/tiles/prime_video.png",
+      "favourite": "false"
+    },
+    {
+      "name": "Spotify",
+      "location": "https://open.spotify.com",
+      "image": "./static/images/tiles/spotify.png",
+      "favourite": "true"
+    },
+    {
+      "name": "VLC",
+      "location": "/usr/bin/vlc",
+      "image": "./static/images/tiles/vlc.png",
+      "favourite": "false"
+    },
+    {
+      "name": "Wii",
+      "location": "/opt/retropie/emulators/dolphin/bin/dolphin-emu",
+      "image": "./static/images/tiles/wii.png",
+      "favourite": "true"
+    },
+    {
+      "name": "YouTube",
+      "location": "https://youtube.com",
+      "image": "./static/images/tiles/youtube.png",
+      "favourite": "true"
+    }
+  ]
+}

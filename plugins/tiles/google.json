@@ -1,9 +1,0 @@
-{
-    "name": "Google",
-    "type":  "web",
-    "catagory":  "site",
-    "url": "https://www.google.com",
-    "info": "Search for things",
-    "logo": "./static/images/tiles/chrome.png",
-    "favourite": "true"
-}

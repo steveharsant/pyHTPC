@@ -1,9 +1,0 @@
-{
-    "name": "Putlocker",
-    "type":  "web",
-    "catagory":  "video",
-    "url": "https://putlockers.bz/",
-    "info": "Like Netflix, but cheaper",
-    "logo": "./static/images/tiles/putlocker.png",
-    "favourite": "false"
-}

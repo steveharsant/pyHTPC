@@ -3,19 +3,19 @@
 <script src="https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js" crossorigin="anonymous"></script>
 
 <script>
-    window.addEventListener('load', function() {
-      // Initialize
-      SpatialNavigation.init();
+  window.addEventListener('load', function () {
+    // Initialize
+    SpatialNavigation.init();
 
-      // Define navigable elements (anchors and elements with "focusable" class).
-      SpatialNavigation.add({
-        selector: 'a, input, select, button'
-      });
-
-      // Make the *currently existing* navigable elements focusable.
-      SpatialNavigation.makeFocusable();
-
-      // Focus the first navigable element.
-      SpatialNavigation.focus();
+    // Define navigable elements (anchors and elements with "focusable" class).
+    SpatialNavigation.add({
+      selector: 'a, input, select, button'
     });
-  </script>
+
+    // Make the *currently existing* navigable elements focusable.
+    SpatialNavigation.makeFocusable();
+
+    // Focus the first navigable element.
+    SpatialNavigation.focus();
+  });
+</script>
