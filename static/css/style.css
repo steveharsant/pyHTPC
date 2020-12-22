@@ -6,19 +6,18 @@
 
 /* Spatial Navigation */
 :focus {
-  outline: 4px solid rgb(0, 81, 134);
+  /* outline: 4px solid rgb(0, 81, 134); */
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 0.75rem #000000);
+  transition: transform .2s;
 }
 
 * {
-  /* cursor: none; */
+  cursor: none;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Raleway', sans-serif;
 }
 
 /* Background. Set by config.json */
@@ -74,6 +73,7 @@ p {
 
 .tile {
   display: inline-block;
+  transition: transform .2s;
 }
 
 .tile-name {
@@ -98,4 +98,17 @@ p {
   position: absolute;
   left: 9.5%;
   margin-top: 20px;
+}
+
+#utilities {
+  bottom: 0;
+  display: flex;
+  justify-content: right;
+  position: fixed;
+  width: 100%;
+  padding: 1rem;
+}
+
+.utility_icons {
+  width: 25px;
 }

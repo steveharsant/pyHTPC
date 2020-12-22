@@ -1,7 +1,7 @@
 {
   "tiles" : {
     "show_names" : "false",
-    "show_catagory_icon" : "false"
+    "show_catagory_icon" : "true"
   },
   "utilities" : {
     "show_names" : "true"

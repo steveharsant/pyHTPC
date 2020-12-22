@@ -1,16 +1,14 @@
-<ul class="list-inline p-2">
+ {% for utility in utilities %}
+ <a href="{{ utility.location }}" target="_blank">
+   <div class="utility col-xs-4 p-2">
 
-  {% for utility in utilities %}
-  <li class="list-inline-item">
-    <a href="{{ utility.location }}">
+     {% if config.utilities.show_names == "true" %}
+     <p class="tile-name text-light">{{ utility.name }}</p>
+     {% else %}
+     <img class="utility_icons" src="{{ utility.image }}" />
+     {% endif %}
 
-      {% if utilities.show_names == "true" %}
-      <p class="utility_text">{{ utility.name }}</p>
-      {% endif %}
-
-      <img class="utility_icons" src="{{ utility.image }}" />
-    </a>
-  </li>
-  {% endfor %}
-
-</ul>
+   </div>
+ </a>
+ {% endfor %}
+ </div>

@@ -6,12 +6,14 @@
 
   {% for tile in tiles %}
   {% if tile.favourite == "true" %}
-  <div class="tile col-xs-4 p-2 img-hover-zoom">
-    {% if config.tiles.show_names == "true" %}
-    <h2 class="tile-name text-light">{{ tile.name }}</h2>
-    {% endif %}
-    <a href="{{ tile.location }}" target="_blank"><img src="{{ tile.image }}" /></a>
-  </div>
+  <a href="{{ tile.location }}" target="_blank">
+    <div class="tile col-xs-4 p-2">
+      {% if config.tiles.show_names == "true" %}
+      <h2 class="tile-name text-light">{{ tile.name }}</h2>
+      {% endif %}
+      <img src="{{ tile.image }}" />
+    </div>
+  </a>
   {% endif %}
   {% endfor %}
 </div>
@@ -23,12 +25,14 @@
 
   {% for tile in tiles %}
   {% if tile.favourite == "false" %}
-  <div class="tile col-xs-4 p-2 img-hover-zoom">
-    {% if config.tiles.show_names == "true" %}
-    <h2 class="tile-name text-light">{{ tile.name }}</h2>
-    {% endif %}
-    <a href="{{ tile.location }}" target="_blank"><img src="{{ tile.image }}" /></a>
-  </div>
+  <a href="{{ tile.location }}" target="_blank">
+    <div class="tile col-xs-4 p-2">
+      {% if config.tiles.show_names == "true" %}
+      <h2 class="tile-name text-light">{{ tile.name }}</h2>
+      {% endif %}
+      <img src="{{ tile.image }}" />
+    </div>
+  </a>
   {% endif %}
   {% endfor %}
 </div>

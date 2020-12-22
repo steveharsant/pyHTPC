@@ -2,12 +2,12 @@
   "utilities": [{
         "name": "Settings",
         "location": "/usr/bin/gnome-control-center",
-        "image": "./static/images/icons/settings.png"
+        "image": "./static/themes/default/icons/settings.png"
       },
       {
         "name": "Power",
         "location": "tbc",
-        "image": "./static/images/icons/power.png"
+        "image": "./static/themes/default/icons/power.png"
       }
     ]
   }
