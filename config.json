@@ -1,12 +1,18 @@
 {
-  "tiles" : {
-    "show_names" : "false",
-    "show_catagory_icon" : "false"
+  "general" : {
+    "name" : "thea",
+    "tag_line" : "Just keep watching...",
+    "show_name" : "true",
+    "show_tag_line" : "true"
   },
-  "utilities" : {
-    "show_names" : "true"
+  "theme": {
+    "active_theme": "default"
   },
-  "theme" : {
-    "active_theme" : "default"
+  "tiles": {
+    "show_names": "false",
+    "show_catagory_icon": "true"
+  },
+  "utilities": {
+    "show_names": "false"
   }
 }

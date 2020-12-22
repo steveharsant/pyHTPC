@@ -29,7 +29,7 @@ print(type(utilities))
 
 @app.route('/')
 def home():
-    return render_template('index.html', tiles=tiles['tiles'], config=config, theme=theme)
+    return render_template('index.html', tiles=tiles['tiles'], config=config, theme=theme, utilities=utilities['utilities'])
 
 #
 # Execute application

@@ -6,19 +6,18 @@
 
 /* Spatial Navigation */
 :focus {
-  outline: 4px solid rgb(0, 81, 134);
+  /* outline: 4px solid rgb(0, 81, 134); */
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 0.75rem #000000);
+  transition: transform .2s;
 }
 
 * {
-  /* cursor: none; */
+  cursor: none;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Raleway', sans-serif;
 }
 
 /* Background. Set by config.json */
@@ -32,14 +31,28 @@ body {
   min-height: 100%;
 }
 
-/* Clock */
-#clock {
+#top_bar {
+  margin: 25px;
+}
+
+#clock,
+#logo {
   color: var(--font-colour);
-  float: right;
   font-size: 4rem;
   font-weight: var(--font-weight);
-  padding-right: 2rem;
   position: relative;
+}
+
+#logo {
+  float: left;
+}
+
+#tag_line {
+  display: block;
+}
+
+#clock {
+  float: right;
 }
 
 /* Text elements */
@@ -54,6 +67,7 @@ h2 {
 }
 
 p {
+  display: contents;
   font-size: 2rem;
   font-weight: var(--font-weight);
 }
@@ -74,6 +88,7 @@ p {
 
 .tile {
   display: inline-block;
+  transition: transform .2s;
 }
 
 .tile-name {
@@ -98,4 +113,17 @@ p {
   position: absolute;
   left: 9.5%;
   margin-top: 20px;
+}
+
+#utilities {
+  bottom: 0;
+  display: flex;
+  justify-content: right;
+  position: fixed;
+  width: 100%;
+  margin: 0 -25px 25px;
+}
+
+.utility_icons {
+  width: 25px;
 }

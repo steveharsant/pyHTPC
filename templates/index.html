@@ -3,9 +3,7 @@
 
 <head>
   {% include 'head.html' %}
-
-  <!-- Icon theme -->
-  {% include 'icons.html' %}
+  {% include 'style.html' %}
 </head>
 
 <body onload="startClock()">
@@ -13,8 +11,9 @@
   <!-- Background -->
   <img src="{{theme.background_image }}" id="bg" alt="">
 
-  <!-- Clock -->
-  <div id="clock">
+  <!-- Top bar -->
+  <div id="top_bar">
+    {% include 'logo.html' %}
     {% include 'clock.html' %}
   </div>
 
