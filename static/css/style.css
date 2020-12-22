@@ -31,13 +31,20 @@ html {
   min-height: 100%;
 }
 
-/* Clock */
+#top_bar {
+  margin: 25px;
+}
+
+#logo {
+  position: relative;
+  float: left;
+}
+
 #clock {
   color: var(--font-colour);
   float: right;
   font-size: 4rem;
   font-weight: var(--font-weight);
-  padding-right: 2rem;
   position: relative;
 }
 
@@ -53,6 +60,7 @@ h2 {
 }
 
 p {
+  display: contents;
   font-size: 2rem;
   font-weight: var(--font-weight);
 }
@@ -106,7 +114,7 @@ p {
   justify-content: right;
   position: fixed;
   width: 100%;
-  padding: 1rem;
+  margin: 0 -25px 25px;
 }
 
 .utility_icons {
