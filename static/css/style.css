@@ -35,17 +35,24 @@ html {
   margin: 25px;
 }
 
+#clock,
 #logo {
-  position: relative;
-  float: left;
-}
-
-#clock {
   color: var(--font-colour);
-  float: right;
   font-size: 4rem;
   font-weight: var(--font-weight);
   position: relative;
+}
+
+#logo {
+  float: left;
+}
+
+#tag_line {
+  display: block;
+}
+
+#clock {
+  float: right;
 }
 
 /* Text elements */

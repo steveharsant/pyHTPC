@@ -1,4 +1,9 @@
     <div id="logo">
-      <h1>{{ config.general.name }}</h1>
-      <p>{{ config.general.tag_line }}</p>
+      {% if config.general.show_name == "true" %}
+      {{ config.general.name }}
+      {% endif %}
+
+      {% if config.general.show_tag_line == "true" %}
+      <p id="tag_line">{{ config.general.tag_line }}</p>
+      {% endif %}
     </div>
