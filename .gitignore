@@ -7,6 +7,8 @@
 /.flaskenv
 /pyHTPC-tests.py
 app.pyc
+notes.md
+
 # Ignored filetypes
-notes.md
-notes.md
+
+
