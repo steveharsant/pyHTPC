@@ -1,0 +1,33 @@
+<!-- <div id="power_buttons">
+  <h2><a href="#">Shutdown</a></h2>
+  <h2><a href="##">Restart</a></h2>
+  <h2><a href="###">Back</a></h2>
+</div> -->
+
+<div id="power_buttons">
+
+  {% if client_os == "windows" %}
+  <a href="/application/{{ config.utilities.power_commands.windows.shutdown }}">
+    {% else %}
+    <a href="/application/{{ config.utilities.power_commands.linux.shutdown }}">
+      {% endif %}
+      <div class="text_button">
+        <h2>Shutdown</h2>
+      </div>
+    </a>
+
+    {% if client_os == "windows" %}
+    <a href="/application/{{ config.utilities.power_commands.windows.restart }}">
+      {% else %}
+      <a href="/application/{{ config.utilities.power_commands.linux.restart }}">
+        {% endif %}
+        <div class="text_button">
+          <h2>Restart</h2>
+        </div>
+      </a>
+      <a href="/">
+        <div class="text_button">
+          <h2>Back</h2>
+        </div>
+      </a>
+</div>

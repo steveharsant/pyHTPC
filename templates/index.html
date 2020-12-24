@@ -1,15 +1,17 @@
+<!-- Includes for all pages -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  {% include 'head.html' %}
+  <title>thea</title>
   {% include 'style.html' %}
+  {% include 'scripts.html' %}
+  {% include 'spatial.html' %}
 </head>
 
 <body onload="startClock()">
 
   <!-- Background -->
-  <!-- <img src="{{theme.background_image }}" id="background" alt=""> -->
   <div id="background"></div>
 
   <!-- Top bar -->
@@ -18,19 +20,14 @@
     {% include 'clock.html' %}
   </div>
 
-  <!-- Tiles -->
-  <div id="tiles">
-    {% include 'tiles.html' %}
-  </div>
+  <!-- Include main content per page -->
+  {% include 'content.html' %}
 
   <!-- utilities bar -->
   <div id="utilities">
     {% include 'utilities.html' %}
   </div>
 
-  <!-- Scripts -->
-  {% include 'scripts.html' %}
-  {% include 'spatial.html' %}
 </body>
 
 </html>

@@ -5,7 +5,8 @@
     "show_name" : "false",
     "show_tag_line" : "false",
     "font" : "Raleway",
-    "hide_mouse" : "false"
+    "hide_mouse" : "true",
+    "show_page_name" : "true"
   },
   "theme": {
     "active_theme": "default"
@@ -15,6 +16,16 @@
     "show_catagory_icon": "true"
   },
   "utilities": {
-    "show_names": "false"
+    "show_names": "false",
+    "power_commands" : {
+          "linux" : {
+            "restart" : "bash -c 'init 6'",
+            "shutdown" : "bash -c 'init 0'"
+          },
+          "windows" : {
+            "restart" : "powershell -Command 'shutdown -r -t 0' -NoProfile -NonInteractive",
+            "shutdown" : "powershell -Command 'shutdown -s -t 0' -NoProfile -NonInteractive"
+          }
+        }
   }
 }
