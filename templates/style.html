@@ -1,7 +1,14 @@
 <style>
   body {
-    font-family: 'Raleway', sans-serif;
+    font-family: '{{ config.general.font }}', sans-serif;
   }
+  #background{
+    background-image: url({{ theme.background_image }});
+  }
+
+  {% if config.general.hide_mouse == "true" %}
+  * {cursor: none;}
+  {% endif %}
 
 
   /* Tile icons */

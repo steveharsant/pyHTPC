@@ -1,0 +1,135 @@
+/* variables */
+:root {
+  --font-colour: #FFFFFF;
+  --font-weight: 200;
+}
+
+/* Spatial Navigation */
+:focus {
+  /* outline: 4px solid rgb(0, 81, 134); */
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 0.75rem #000000);
+  transition: transform .2s;
+  outline: none;
+}
+
+* {
+  cursor: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background. Set by config.json */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#top_bar {
+  margin: 25px;
+}
+
+#clock,
+#logo {
+  color: var(--font-colour);
+  font-size: 4rem;
+  font-weight: var(--font-weight);
+  position: relative;
+}
+
+#logo {
+  float: left;
+}
+
+#tag_line {
+  display: block;
+}
+
+#clock {
+  float: right;
+}
+
+/* Text elements */
+h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight);
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: var(--font-weight);
+}
+
+p {
+  display: contents;
+  font-size: 2rem;
+  font-weight: var(--font-weight);
+}
+
+/* Tiles */
+#tiles {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%
+}
+
+#favourite_tiles,
+#all_tiles {
+  display: flex;
+  justify-content: center;
+}
+
+.tile {
+  display: inline-block;
+  transition: transform .2s;
+}
+
+.tile-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 18.1rem;
+}
+
+/* Icons */
+.icon {
+  /* This is the better option when image ratios are correct */
+  /* background-size: cover; */
+
+  /* This is the easier option for now */
+  background-size: 100% 100%;
+  height: 30px;
+  width: 35px;
+}
+
+.tile_catagory_icon {
+  position: absolute;
+  left: 9.5%;
+  margin-top: 20px;
+}
+
+#utilities {
+  bottom: 0;
+  display: inline-flex;
+  justify-content: right;
+  position: fixed;
+  width: auto;
+  margin: 0 -25px 25px;
+  right: 2.5rem;
+}
+
+.utility {
+  float: right;
+}
+
+.utility_icons {
+  width: 25px;
+}
