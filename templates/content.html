@@ -1,0 +1,13 @@
+{% if config.general.show_page_name == 'true' %}
+<div id="page_name">
+  <h1>{{ page_name }}</h1>
+</div>
+{% endif %}
+
+<div id="content">
+  {% if page_name == 'home'  %}
+  {% include 'tiles.html' %}
+  {% elif page_name == 'power' %}
+  {% include 'test/power.html' %}
+  {% endif %}
+</div>

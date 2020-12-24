@@ -6,7 +6,7 @@
       },
       {
         "name": "Power",
-        "location": "tbc",
+        "location": "power",
         "image": "./static/themes/default/icons/power.png"
       }
     ]

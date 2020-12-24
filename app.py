@@ -19,8 +19,6 @@ utilities = read_config('./utilities.json')
 theme = read_config(
     './static/themes/{}/theme.json'.format(config['theme']['active_theme']))
 
-print(type(tiles))
-print(type(utilities))
 
 #
 # Home screen
@@ -29,14 +27,46 @@ print(type(utilities))
 
 @app.route('/')
 def home():
-    return render_template('index.html', tiles=tiles['tiles'], config=config, theme=theme, utilities=utilities['utilities'])
+    return render_template('index.html',
+                           tiles=tiles['tiles'],
+                           config=config,
+                           theme=theme,
+                           utilities=utilities['utilities'],
+                           page_name='home')
+
+#
+# Power options page
+#
+
+
+@app.route('/power')
+def power():
+    user_agent_string = request.headers.get('User-Agent')
+    if 'Windows' in user_agent_string:
+        client_os = 'windows'
+    elif 'Linux' in user_agent_string:
+        client_os = 'linux'
+    elif 'Macintosh' in user_agent_string:
+        client_os = 'mac'
+    print('Client hit with user agent string: ' + user_agent_string)
+    return render_template('index.html',
+                           config=config,
+                           client_os=client_os,
+                           theme=theme,
+                           utilities=utilities['utilities'],
+                           page_name='power')
 
 #
 # Execute application
 #
 
 
-@app.route('/usr/bin/<app>')
+@app.route('/application/<app>')
 def application(app):
-    os.system('/usr/bin/' + app)
+    os.system(app)
     return redirect('/')
+
+# @app.route('/usr/bin/<app>')
+# def application(app):
+#     os.system('/usr/bin/' + app)
+#     return redirect('/')
