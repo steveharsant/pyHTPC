@@ -5,18 +5,18 @@ function startClock() {
   //  var s = today.getSeconds();
     m = checkTime(m);
     //s = checkTime(s);
-     
+
     if (h >= 12) {
       ampm = "pm"
       if (h > 12) {
         h = h -12
       }
-    } else { 
+    } else {
       ampm = "am"
     }
-    
+
     document.getElementById('clock').innerHTML =
-    h + ":" + m + ampm;
+    "<h1>" + h + ":" + m + ampm + "</h1>";
     var t = setTimeout(startClock, 500);
   }
   function checkTime(i) {

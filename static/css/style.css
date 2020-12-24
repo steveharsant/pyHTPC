@@ -1,104 +1,104 @@
-/* variables */
+/* Variables */
 :root {
   --font-colour: #FFFFFF;
+  --font-size: 15px;
   --font-weight: 200;
 }
 
-/* Spatial Navigation */
-:focus {
-  /* outline: 4px solid rgb(0, 81, 134); */
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 0.75rem #000000);
-  transition: transform .2s;
+/* Elements */
+a {
+  text-decoration: none;
 }
 
-* {
-  cursor: none;
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  font-weight: var(--font-weight);
+  color: var(--font-colour);
+}
+
+body {
+  min-height: 98vh;
+  scroll-behavior: smooth;
+}
+
+div {
+  display: inline-block;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: var(--font-size);
 }
 
-/* Background. Set by config.json */
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
-}
-
-#top_bar {
-  margin: 25px;
-}
-
-#clock,
-#logo {
-  color: var(--font-colour);
-  font-size: 4rem;
-  font-weight: var(--font-weight);
-  position: relative;
-}
-
-#logo {
-  float: left;
-}
-
-#tag_line {
+img {
+  max-width: 100%;
   display: block;
-}
-
-#clock {
-  float: right;
 }
 
 /* Text elements */
 h1 {
-  font-size: 3.5rem;
-  font-weight: var(--font-weight);
+  font-size: 4rem;
 }
 
 h2 {
   font-size: 3rem;
-  font-weight: var(--font-weight);
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 p {
-  display: contents;
-  font-size: 2rem;
-  font-weight: var(--font-weight);
+  font-size: 1.5rem;
+}
+
+/* Background (image set in style.html template) */
+#background {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* Top bar */
+#top_bar {
+  top: 0;
+  position: relative;
+  width: 96vw;
+  margin: 0 2vw 0 2vw;
+}
+
+#logo {
+  float: left
+}
+
+#clock {
+  float: right;
+  transform: translateY(25%);
 }
 
 /* Tiles */
 #tiles {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 100%
+  transform: translateY(75%);
+  width: 100vw;
 }
 
-#favourite_tiles,
-#all_tiles {
-  display: flex;
-  justify-content: center;
+.tiles {
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
 }
 
 .tile {
-  display: inline-block;
-  transition: transform .2s;
+  padding: 4px;
 }
 
-.tile-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 18.1rem;
-}
-
-/* Icons */
 .icon {
   /* This is the better option when image ratios are correct */
   /* background-size: cover; */
@@ -111,17 +111,21 @@ p {
 
 .tile_catagory_icon {
   position: absolute;
-  left: 9.5%;
-  margin-top: 20px;
+  left: -3vw;
+  top: 0.2vw;
 }
 
+/* Utilities */
 #utilities {
-  bottom: 0;
-  display: flex;
-  justify-content: right;
-  position: fixed;
-  width: 100%;
-  margin: 0 -25px 25px;
+  position: absolute;
+  bottom: 2vw;
+  right: 2vw;
+  display: inline-flex;
+}
+
+.utility {
+  float: right;
+  padding-left: 10px;
 }
 
 .utility_icons {

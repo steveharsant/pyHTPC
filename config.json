@@ -3,7 +3,9 @@
     "name" : "thea",
     "tag_line" : "Just keep watching...",
     "show_name" : "false",
-    "show_tag_line" : "false"
+    "show_tag_line" : "false",
+    "font" : "Raleway",
+    "hide_mouse" : "false"
   },
   "theme": {
     "active_theme": "default"
