@@ -49,7 +49,7 @@
     },
     {
       "name": "Wii",
-      "location": "/opt/retropie/emulators/dolphin/bin/dolphin-emu",
+      "location": "/usr/games/dolphin-emu",
       "image": "./static/images/tiles/wii.png",
       "favourite": "true"
     },
