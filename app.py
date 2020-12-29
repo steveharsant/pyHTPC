@@ -61,12 +61,12 @@ def power():
 #
 
 
-@app.route('/application/<app>')
+@app.route('/usr/bin/<app>')
 def application(app):
-    os.system(app)
+    os.system('/usr/bin/' + app)
     return redirect('/')
 
-# @app.route('/usr/bin/<app>')
+# @app.route('/application/<app>')
 # def application(app):
-#     os.system('/usr/bin/' + app)
+#     os.system(app)
 #     return redirect('/')

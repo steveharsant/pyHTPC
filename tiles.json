@@ -18,9 +18,9 @@
       "favourite": "false"
     },
     {
-      "name": "Emby",
+      "name": "Jellyfin",
       "location": "https://watch.sharsant.com",
-      "image": "./static/images/tiles/emby.png",
+      "image": "./static/images/tiles/jellyfin.png",
       "favourite": "true"
     },
     {
