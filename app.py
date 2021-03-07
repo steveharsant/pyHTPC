@@ -36,26 +36,41 @@ def home():
                            page_name='home')
 
 #
-# Power options page
+# Power options
 #
 
 
 @app.route('/power')
 def power():
-    user_agent_string = request.headers.get('User-Agent')
-    if 'Windows' in user_agent_string:
-        client_os = 'windows'
-    elif 'Linux' in user_agent_string:
-        client_os = 'linux'
-    elif 'Macintosh' in user_agent_string:
-        client_os = 'mac'
-    print('Client hit with user agent string: ' + user_agent_string)
     return render_template('index.html',
                            config=config,
-                           client_os=client_os,
                            theme=theme,
                            utilities=utilities['utilities'],
                            page_name='power')
+
+
+@app.route('/power/restart')
+def shutdown():
+    if os.name == 'nt':
+        subprocess.call(config['utilities']
+                        ['power_commands']['windows']['restart'])
+    else:
+        subprocess.call(config['utilities']
+                        ['power_commands']['linux']['restart'])
+
+    return render_template('return.html')
+
+
+@app.route('/power/shutdown')
+def shutdown():
+    if os.name == 'nt':
+        subprocess.call(config['utilities']
+                        ['power_commands']['windows']['shutdown'])
+    else:
+        subprocess.call(config['utilities']
+                        ['power_commands']['linux']['shutdown'])
+
+    return render_template('return.html')
 
 #
 # Execute application
@@ -66,9 +81,11 @@ if os.name == 'nt':
     # Windows
     @app.route('/app/<app>')
     def application(app):
+
         print('Launching application: {}'.format(app))
         for tile in tiles['tiles']:
             if tile['location'] == '/app/{}'.format(app):
+
                 # If the Windows app key is found within the dictionary,
                 # build the binary path as an exeplore application
                 if 'windows_app' in tile:
@@ -81,7 +98,7 @@ if os.name == 'nt':
                     bin_path = tile['executable']
 
         subprocess.call(bin_path)
-        return redirect('/')
+        return render_template('return.html')
 
 else:
     # Linux / MacOS
