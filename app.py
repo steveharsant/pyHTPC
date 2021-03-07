@@ -52,10 +52,10 @@ def power():
 @app.route('/power/restart')
 def shutdown():
     if os.name == 'nt':
-        subprocess.call(config['utilities']
+        os.system(config['utilities']
                         ['power_commands']['windows']['restart'])
     else:
-        subprocess.call(config['utilities']
+        os.system(config['utilities']
                         ['power_commands']['linux']['restart'])
 
     return render_template('return.html')
@@ -64,10 +64,10 @@ def shutdown():
 @app.route('/power/shutdown')
 def restart():
     if os.name == 'nt':
-        subprocess.call(config['utilities']
+        os.system(config['utilities']
                         ['power_commands']['windows']['shutdown'])
     else:
-        subprocess.call(config['utilities']
+        os.system(config['utilities']
                         ['power_commands']['linux']['shutdown'])
 
     return render_template('return.html')

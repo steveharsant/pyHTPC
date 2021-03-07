@@ -23,8 +23,8 @@
             "shutdown" : "bash -c 'init 0'"
           },
           "windows" : {
-            "restart" : "powershell.exe -NoProfile -WindowStyle Hidden -Command 'shutdown -r -t 0'",
-            "shutdown" : "powershell.exe -NoProfile -WindowStyle Hidden -Command 'shutdown -s -t 0'"
+            "restart" : "shutdown -r -t 0",
+            "shutdown" : "shutdown -s -t 0"
           }
         }
   }
