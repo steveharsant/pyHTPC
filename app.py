@@ -62,7 +62,7 @@ def shutdown():
 
 
 @app.route('/power/shutdown')
-def shutdown():
+def restart():
     if os.name == 'nt':
         subprocess.call(config['utilities']
                         ['power_commands']['windows']['shutdown'])
