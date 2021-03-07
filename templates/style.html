@@ -1,16 +1,27 @@
 <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
 
 <style>
-  body {
-    font-family: '{{ config.general.font }}', sans-serif;
+  body,
+  #search_bar {
+    font-family: '{{ config.general.font }}',
+    sans-serif;
   }
-  #background{
+
+  #background {
     background-image: url({{ theme.background_image }});
   }
 
-  {% if config.general.hide_mouse == "true" %}
-  * {cursor: none;}
-  {% endif %}
+    {
+    % if config.general.hide_mouse=="true"%
+  }
+
+  * {
+    cursor: none;
+  }
+
+    {
+    % endif %
+  }
 
 
   /* Tile icons */

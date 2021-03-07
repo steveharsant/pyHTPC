@@ -1,0 +1,9 @@
+{% if config.general.show_search_bar == 'true' %}
+
+<div id="search">
+  <form role="search" method="get" id="search_form" action="https://www.bing.com/search?q=" target="_blank">
+    <input id="search_bar" type="text" value="" name="q" placeholder="Search...">
+  </form>
+</div>
+
+{% endif %}

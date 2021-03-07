@@ -7,7 +7,8 @@
     },
     {
       "name": "Web Browser",
-      "location": "tbc",
+      "location": "/app/firefox",
+      "executable": "C:/Program Files/Mozilla Firefox/firefox.exe",
       "image": "./static/images/tiles/browser.png",
       "favourite": "false"
     },
@@ -18,9 +19,9 @@
       "favourite": "false"
     },
     {
-      "name": "Jellyfin",
+      "name": "Emby",
       "location": "http://192.168.5.150:8096",
-      "image": "./static/images/tiles/jellyfin.png",
+      "image": "./static/images/tiles/emby.png",
       "favourite": "true"
     },
     {
@@ -45,8 +46,9 @@
     },
     {
       "name": "VLC",
-      "location": "/usr/bin/vlc",
+      "location": "/app/vlc",
       "image": "./static/images/tiles/vlc.png",
+      "executable": "C:/Program Files/VideoLAN/VLC/vlc.exe",
       "favourite": "false"
     },
     {

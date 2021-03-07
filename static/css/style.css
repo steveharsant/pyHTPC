@@ -135,6 +135,32 @@ p {
   padding-bottom: 20px;
 }
 
+/* Search bar */
+#search {
+  width: 50%;
+  transform: translate(-50%);
+  left: 50%;
+  position: relative;
+}
+
+#search_bar {
+  position: fixed;
+  height: 5vh;
+  transform: translate(-50%);
+  left: 50%;
+  width: 75%;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: var(--font-weight);
+
+
+
+}
+
 /* Utilities */
 #utilities {
   position: absolute;

@@ -6,7 +6,8 @@
     "show_tag_line" : "false",
     "font" : "Raleway",
     "hide_mouse" : "true",
-    "show_page_name" : "true"
+    "show_page_name" : "true",
+    "show_search_bar" : "true"
   },
   "theme": {
     "active_theme": "default"
