@@ -25,13 +25,15 @@
     },
     {
       "name": "Netflix",
-      "location": "https://netflix.com/SwitchProfile?tkn=ZZJLOC5AFNFJBKE2D7FZZA6QQE",
+      "location": "/app/netflix",
+      "executable" : "C:/Users/Steve/applications/NetflixRemoteController/NetflixRemoteController.exe",
       "image": "./static/images/tiles/netflix.png",
       "favourite": "true"
     },
     {
       "name": "Prime Video",
-      "location": "https://amazon.co.uk/Amazon-Video/b?&node=3010085031",
+      "location": "/app/prime_video",
+      "windows_app": "AmazonVideo.PrimeVideo_pwbj9vvecjh7j!App",
       "image": "./static/images/tiles/prime_video.png",
       "favourite": "false"
     },

@@ -64,15 +64,25 @@ def power():
 
 if os.name == 'nt':
     # Windows
-    @app.route('/bin/<app>')
+    @app.route('/app/<app>')
     def application(app):
+        print('Launching application: {}'.format(app))
         for tile in tiles['tiles']:
-            if tile['name'] == app:
-                bin_path = tile['path']
-                break
+            if tile['location'] == '/app/{}'.format(app):
+                # If the Windows app key is found within the dictionary,
+                # build the binary path as an exeplore application
+                if 'windows_app' in tile:
+                    bin_path = 'explorer.exe shell:appsFolder\\{}'.format(
+                        tile['windows_app'])
+
+                # If the windows_app key is not found, check for a
+                # standard executable file, and start it
+                elif 'executable' in tile:
+                    bin_path = tile['executable']
 
         subprocess.call(bin_path)
         return redirect('/')
+
 else:
     # Linux / MacOS
     @app.route('/usr/bin/<app>')
