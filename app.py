@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, redirect, render_template, request
 import json
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -61,12 +62,27 @@ def power():
 #
 
 
-@app.route('/usr/bin/<app>')
-def application(app):
-    os.system('/usr/bin/' + app)
-    return redirect('/')
+if os.name == 'nt':
+    # Windows
+    @app.route('/bin/<app>')
+    def application(app):
+        for tile in tiles['tiles']:
+            if tile['name'] == app:
+                bin_path = tile['path']
+                break
 
-# @app.route('/application/<app>')
-# def application(app):
-#     os.system(app)
-#     return redirect('/')
+        subprocess.call(bin_path)
+        return redirect('/')
+else:
+    # Linux / MacOS
+    @app.route('/usr/bin/<app>')
+    def application(app):
+        os.system('/usr/bin/' + app)
+        return redirect('/')
+
+#
+# Start application
+#
+
+if __name__ == "__main__":
+    app.run()

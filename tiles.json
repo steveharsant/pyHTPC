@@ -19,7 +19,7 @@
     },
     {
       "name": "Jellyfin",
-      "location": "https://watch.sharsant.com",
+      "location": "http://192.168.5.150:8096",
       "image": "./static/images/tiles/jellyfin.png",
       "favourite": "true"
     },
