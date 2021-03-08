@@ -9,6 +9,13 @@
     "show_page_name" : "true",
     "show_search_bar" : "true"
   },
+  "startup": {
+    "browser": "msedge",
+    "kiosk_mode": "true",
+    "install_directory" : "C:/applications/thea/",
+    "force_venv" : "true",
+    "update_on_start" : "true"
+  },
   "theme": {
     "active_theme": "default"
   },

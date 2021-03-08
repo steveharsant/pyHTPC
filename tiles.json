@@ -26,8 +26,7 @@
     },
     {
       "name": "Netflix",
-      "location": "/app/netflix",
-      "executable" : "C:/Users/Steve/applications/NetflixRemoteController/NetflixRemoteController.exe",
+      "location": "https://www.netflix.com/SwitchProfile?tkn=ZZJLOC5AFNFJBKE2D7FZZA6QQE",
       "image": "./static/images/tiles/netflix.png",
       "favourite": "true"
     },
