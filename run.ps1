@@ -1,14 +1,4 @@
-[CmdletBinding()]
-param (
-  [Parameter()][switch] $development
-)
-
-if ($development.IsPresent) {
-  $configPath = './config.json'
-}
-else {
-  $configPath = "$PSscriptRoot/config.json"
-}
+$configPath = "$PSscriptRoot/config.json"
 
 if (Test-Path -Path $configPath) {
   Write-Output 'Loading config.json'
@@ -20,9 +10,7 @@ else {
 
 $config = Get-Content -Path $configPath | ConvertFrom-Json
 
-if (! $development.IsPresent) {
-  Set-Location $config.startup.install_directory
-}
+Set-Location $config.startup.install_directory
 
 if ($config.startup.force_venv -eq 'true') {
   # Install venv if not already installed and activate

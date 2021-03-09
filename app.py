@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, redirect, render_template, request
 import json
 import os
-import subprocess
 
 app = Flask(__name__)
 
@@ -101,7 +100,8 @@ if os.name == 'nt':
                 elif 'executable' in tile:
                     bin_path = tile['executable']
 
-        subprocess.call(bin_path)
+        # Double quotes required for cmd for paths with a space character.
+        os.system('"{}"'.format(bin_path))
         return render_template('return.html')
 
 else:
