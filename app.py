@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, redirect, render_template, request
+from pywinauto import Application
 import json
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -100,8 +102,10 @@ if os.name == 'nt':
                 elif 'executable' in tile:
                     bin_path = tile['executable']
 
-        # Double quotes required for cmd for paths with a space character.
-        os.system('"{}"'.format(bin_path))
+        # Start process and bring process to front
+        process = subprocess.Popen(bin_path)
+        app = Application().connect(process=process.pid)
+        app.top_window().set_focus()
         return render_template('return.html')
 
 else:

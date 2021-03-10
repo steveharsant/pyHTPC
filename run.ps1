@@ -1,10 +1,11 @@
-$configPath = "$PSscriptRoot/config.json"
+$configPath = "./config.json"
 
 if (Test-Path -Path $configPath) {
   Write-Output 'Loading config.json'
 }
 else {
   Write-Error 'json.config file not found. Failed to boot thea. exit 10'
+  Start-Sleep 5
   exit 10
 }
 
@@ -19,7 +20,7 @@ if ($config.startup.force_venv -eq 'true') {
   .\venv\Scripts\activate
 
   # Install dependencies
-  $dependencies = 'flask'
+  $dependencies = 'flask', 'pywinauto', 'pywin32'
   foreach ($dependency in $dependencies) {
     pip install $dependency
   }
