@@ -1,3 +1,8 @@
+[CmdletBinding()]
+param (
+  [Parameter()][switch] $devMode
+)
+
 $configPath = "./config.json"
 
 if (Test-Path -Path $configPath) {
@@ -30,5 +35,7 @@ if ($config.startup.kiosk_mode -eq 'true') {
   $kiosk = '--kiosk'
 }
 
-&"$($config.startup.browser)" $kiosk 127.0.0.1:5000
+if (!($devMode.IsPresent)) {
+  &"$($config.startup.browser)" $kiosk 127.0.0.1:5000
+}
 python.exe "$($config.startup.install_directory)\app.py"

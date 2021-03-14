@@ -16,6 +16,21 @@
     "force_venv" : "true",
     "update_on_start" : "true"
   },
+  "settings": [{
+      "name": "Sound",
+      "location": "/settings/sound",
+      "command": "start ms-settings:sound"
+  },
+  {
+      "name": "Bluetooth",
+      "location": "/settings/bluetooth",
+      "command": "start ms-settings:bluetooth"
+  },
+  {
+      "name": "Display",
+      "location": "/settings/display",
+      "command": "start ms-settings:display"
+  }],
   "theme": {
     "active_theme": "default"
   },

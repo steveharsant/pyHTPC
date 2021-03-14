@@ -1,13 +1,18 @@
 {
   "utilities": [{
-        "name": "Settings",
-        "location": "/usr/bin/gnome-control-center",
-        "image": "./static/themes/default/icons/settings.png"
+        "name": "home",
+        "location": "/",
+        "image": "./static/themes/default/icons/home.svg"
       },
       {
-        "name": "Power",
-        "location": "power",
-        "image": "./static/themes/default/icons/power.png"
+        "name": "settings",
+        "location": "/settings",
+        "image": "./static/themes/default/icons/settings.svg"
+      },
+      {
+        "name": "power",
+        "location": "/power",
+        "image": "./static/themes/default/icons/power.svg"
       }
     ]
   }
