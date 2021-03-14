@@ -1,14 +1,20 @@
  {% for utility in utilities %}
+ {% if page_name != utility.name %}
  <a href="{{ utility.location }}">
    <div class="utility col-xs-4 p-2">
 
      {% if config.utilities.show_names == "true" %}
+
      <p class="tile-name text-light">{{ utility.name }}</p>
      {% else %}
-     <img class="utility_icons" src="{{ utility.image }}" />
+
+
+     <img class="utility_icons  theme_icon" src="{{ utility.image }}" />
      {% endif %}
+
 
    </div>
  </a>
+ {% endif %}
  {% endfor %}
  </div>

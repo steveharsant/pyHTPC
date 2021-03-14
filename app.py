@@ -27,10 +27,10 @@ theme = read_config(
 
 
 #
-# Home screen
+# Render Pages
 #
 
-
+# Render Homepage
 @app.route('/')
 def home():
     return render_template('index.html',
@@ -40,21 +40,23 @@ def home():
                            utilities=utilities['utilities'],
                            page_name='home')
 
-#
-# Power options
-#
 
-
-@app.route('/power')
-def power():
+# Render all other pages
+@ app.route('/<page_name>')
+def load_page(page_name):
+    print('Loading {}'.format(page_name))
     return render_template('index.html',
                            config=config,
                            theme=theme,
                            utilities=utilities['utilities'],
-                           page_name='power')
+                           page_name=page_name)
 
 
-@app.route('/power/restart')
+#
+# Power options
+#
+
+@ app.route('/power/restart')
 def shutdown():
     if os.name == 'nt':
         os.system(config['utilities']
@@ -83,6 +85,7 @@ def restart():
 
 
 if os.name == 'nt':
+
     # Windows
     @app.route('/app/<app>')
     def application(app):
@@ -114,6 +117,31 @@ else:
     def application(app):
         os.system('/usr/bin/' + app)
         return redirect('/')
+
+#
+# Open settings
+#
+
+if os.name == 'nt':
+
+    # Windows
+    @app.route('/settings/<settings>')
+    def settings(settings):
+
+        print('Launching settings option: {}'.format(settings))
+        for setting in config['settings']:
+            if setting['location'] == '/settings/{}'.format(settings):
+                command = 'cmd /c start ms-settings:{}'.format(
+                    setting['name']).lower()
+
+        subprocess.Popen(command)
+        return redirect('/')
+else:
+    # Linux / MacOS
+    @app.route('/app/<settings>')
+    def settings(settings):
+        return render_template('apologies.html')
+
 
 #
 # Start application

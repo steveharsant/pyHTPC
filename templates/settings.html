@@ -1,0 +1,16 @@
+<div id="settings_items">
+  {% for setting in config.settings %}
+
+  <a href="{{ setting.location }}">
+    <div class="text_button">
+      <h2>{{ setting.name }}</h2>
+    </div>
+  </a>
+
+  {% endfor %}
+  <a href="javascript:history.back()">
+    <div class="text_button">
+      <h2>Back</h2>
+    </div>
+  </a>
+</div>

@@ -1,9 +1,9 @@
 {
   "background_image" : "./static/themes/default/background.jpg",
   "icons" : {
-    "favourites" : "./static/themes/default/icons/favourites.png",
-    "settings" : "./static/themes/default/icons/settings.png",
-    "all_tiles" : "./static/themes/default/icons/tiles.png",
-    "power" : "./static/themes/default/icons/tiles.png"
+    "favourites" : "./static/themes/default/icons/favourites.svg",
+    "settings" : "./static/themes/default/icons/settings.svg",
+    "all_tiles" : "./static/themes/default/icons/tiles.svg",
+    "power" : "./static/themes/default/icons/tiles.svg"
   }
 }
