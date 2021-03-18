@@ -83,6 +83,11 @@ p {
   transform: translateY(25%);
 }
 
+#weather {
+  float: left;
+  transform: translateY(25%);
+}
+
 #page_name {
   transform: translate(-50%, 290%);
   left: 50%;
