@@ -1,5 +1,10 @@
+# Set linting rules
+# pylint: disable=import-error
+
 from flask import Flask, jsonify, redirect, render_template, request
 from pywinauto import Application
+
+import errno
 import json
 import os
 import subprocess
@@ -7,8 +12,10 @@ import subprocess
 app = Flask(__name__)
 
 #
-# Process config files
+# Initialisation
 #
+
+# Process config files
 
 
 def read_config(input_file):
@@ -20,17 +27,39 @@ def read_config(input_file):
 config = read_config('./config.json')
 tiles = read_config('./tiles.json')
 utilities = read_config('./utilities.json')
-
 # Load theme last as it relies on config to be loaded as well
 theme = read_config(
     './static/themes/{}/theme.json'.format(config['theme']['active_theme']))
 
+# Create temporary path if
+# it does not already exist
+if os.name == 'nt':
+    temp_directory = "{}/thea".format(os.getenv('TEMP'))
+else:
+    temp_directory = '/tmp/thea'
+
+try:
+    os.makedirs(temp_directory)
+except OSError as e:
+    if e.errno != errno.EEXIST:
+        raise
+
+#
+# Import plugins
+#
+
+plugins = [f for f in os.listdir('./plugins')]
+for plugin in plugins:
+    if plugin.endswith('.py'):
+        exec(open('plugins/{}'.format(plugin)).read())
 
 #
 # Render Pages
 #
 
 # Render Homepage
+
+
 @app.route('/')
 def home():
     return render_template('index.html',
@@ -38,7 +67,8 @@ def home():
                            config=config,
                            theme=theme,
                            utilities=utilities['utilities'],
-                           page_name='home')
+                           page_name='home',
+                           temp=temp)
 
 
 # Render all other pages
@@ -49,7 +79,8 @@ def load_page(page_name):
                            config=config,
                            theme=theme,
                            utilities=utilities['utilities'],
-                           page_name=page_name)
+                           page_name=page_name,
+                           temp=temp)
 
 
 #
@@ -141,7 +172,6 @@ else:
     @app.route('/app/<settings>')
     def settings(settings):
         return render_template('apologies.html')
-
 
 #
 # Start application
