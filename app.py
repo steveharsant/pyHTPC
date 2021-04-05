@@ -1,5 +1,6 @@
 # Set linting rules
 # pylint: disable=import-error
+# pylint: disable=undefined-variable
 
 from flask import Flask, jsonify, redirect, render_template, request
 from pywinauto import Application
@@ -23,10 +24,18 @@ def read_config(input_file):
     return json.loads(f)
 
 
+def reload_config():
+    config_files = 'config.json', 'tiles.json', 'utilities.json'
+    for conf in config_files:
+        read_config('./{}'.format(conf))
+
+
 # Read config to variables
 config = read_config('./config.json')
 tiles = read_config('./tiles.json')
 utilities = read_config('./utilities.json')
+
+
 # Load theme last as it relies on config to be loaded as well
 theme = read_config(
     './static/themes/{}/theme.json'.format(config['theme']['active_theme']))
@@ -62,6 +71,8 @@ for plugin in plugins:
 
 @app.route('/')
 def home():
+    # config = read_config('./config.json')
+    reload_config()
     return render_template('index.html',
                            tiles=tiles['tiles'],
                            config=config,
@@ -126,7 +137,7 @@ if os.name == 'nt':
             if tile['location'] == '/app/{}'.format(app):
 
                 # If the Windows app key is found within the dictionary,
-                # build the binary path as an exeplore application
+                # build the binary path as an explorer application
                 if 'windows_app' in tile:
                     bin_path = 'explorer.exe shell:appsFolder\\{}'.format(
                         tile['windows_app'])
@@ -138,8 +149,13 @@ if os.name == 'nt':
 
         # Start process and bring process to front
         process = subprocess.Popen(bin_path)
-        app = Application().connect(process=process.pid)
-        app.top_window().set_focus()
+
+        try:
+            app = Application().connect(process=process.pid)
+            app.top_window().set_focus()
+        except Exception as e:
+            print(e)
+
         return render_template('return.html')
 
 else:
