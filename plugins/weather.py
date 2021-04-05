@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 file_path = "{}/weather.xml".format(temp_directory)
 location = config['weather']['location']
-unit = config['weather']['unit']
+unit = config['weather']['unit'].upper()
 
 url = "https://weather-broker-cdn.api.bbci.co.uk/en/observation/rss/{}".format(
     location)
@@ -25,7 +25,12 @@ for tag in xml[0]:
             if t.tag == 'description':
                 weather = t.text
 
-# Set regex pattern with correct temperature unit
-regex = '.*([0-9]+.{}).*'.format(unit)
-temp = (re.match(r'{}'.format(regex), weather)).group(1)
+regex = '\\d+.[C|F]'
+t = re.findall(regex, weather)
+
+if unit == 'C':
+    temp = t[0]
+elif unit == 'F':
+    temp = t[1]
+
 print('Processed weather information. Temperature currently is: {}'.format(temp))

@@ -36,6 +36,10 @@ if ($config.startup.kiosk_mode -eq 'true') {
 }
 
 if (!($devMode.IsPresent)) {
+  $env:FLASK_ENV = 'development'
+  $env:FLASK_APP = 'app.py'
+  $env:FLASK_DEBUG = '1'
   &"$($config.startup.browser)" $kiosk 127.0.0.1:5000
 }
-python.exe "$($config.startup.install_directory)\app.py"
+# python.exe "$($config.startup.install_directory)\app.py"
+flask run
