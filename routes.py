@@ -7,8 +7,6 @@
 
 @app.route('/')
 def home():
-    # config = read_config('./config.json')
-    reload_config()
     return render_template('index.html',
                            tiles=tiles['tiles'],
                            config=config,

@@ -3,12 +3,14 @@
 # pylint: disable=undefined-variable
 
 from flask import Flask, jsonify, redirect, render_template, request
+from functions import read_config
 from pywinauto import Application
 
-import errno
 import json
+import errno
 import os
 import subprocess
+
 
 app = Flask(__name__)
 
@@ -16,25 +18,14 @@ app = Flask(__name__)
 # Initialisation
 #
 
-# Process config files
-
-
-def read_config(input_file):
-    f = (open(input_file, "r+")).read()
-    return json.loads(f)
-
-
-def reload_config():
-    config_files = 'config.json', 'tiles.json', 'utilities.json'
-    for conf in config_files:
-        read_config('./{}'.format(conf))
-
-
-# Read config to variables
-config = read_config('./config.json')
-tiles = read_config('./tiles.json')
-utilities = read_config('./utilities.json')
-
+# Dynamically read config to variables
+config_files = [f for f in os.listdir('.')]
+for c in config_files:
+    if c.endswith('.json'):
+        f = (open(c, "r+")).read()
+        v = c.split('.')[0]
+        globals()[v] = json.loads(f)
+        print('loaded variable name: {}'.format(v))
 
 # Load theme last as it relies on config to be loaded as well
 theme = read_config(
